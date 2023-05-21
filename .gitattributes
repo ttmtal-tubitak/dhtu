@@ -7,4 +7,4 @@
 *.php diff=php
 
 /.github export-ignore
-CHANGELOG.md export-ignore
+CHANGELOG.md export-ignore 
