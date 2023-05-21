@@ -497,7 +497,7 @@ mark,
 .blockquote-footer {
   display: block;
   font-size: 80%;
-  color: #6c757d;
+  color: #6c757d; 
 }
 
 .blockquote-footer::before {

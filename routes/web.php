@@ -26,7 +26,7 @@ Route::get('/predict-v2', function () {
 });
 
 Route::get('/docs', function () {
-    return view('docs');
+    return view('docs'); 
 });
 
 Route::get('/abstract', function () {

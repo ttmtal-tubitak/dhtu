@@ -123,7 +123,7 @@ class Controller extends BaseController
         if($request->ajax()){ 
             if($request->hasFile('image') == 1){
                 $validation = Validator::make($request->all(), [
-                    'image' => 'required|image|mimes:jpg|max:2048'
+                    'image' => 'required|image|mimes:jpg|max:2048' 
                 ]);
                 if($validation->passes()){
                     $file = $request->file('image');
