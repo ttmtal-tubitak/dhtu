@@ -2,7 +2,7 @@
     "_readme": [
         "This file locks the dependencies of your project to a known state",
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
+        "This file is @generated automatically" 
     ],
     "content-hash": "cf14086919a839fe740e00554e4baff6",
     "packages": [
@@ -17,7 +17,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/asm89/stack-cors/zipball/73e5b88775c64ccc0b84fb60836b30dc9d92ac4a",
-                "reference": "73e5b88775c64ccc0b84fb60836b30dc9d92ac4a",
+                "reference": "73e5b88775c64ccc0b84fb60836b30dc9d92ac4a", 
                 "shasum": ""
             },
             "require": {
