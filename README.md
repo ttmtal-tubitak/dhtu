@@ -1,64 +1,39 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Prevelansı Yüksek Deri Hastalıklarının Derin Öğrenme ile Sınıflandırılması ve Web Uygulamsı
 
-## About Laravel
+Bu proje 2023 Tübitak Liselerarası Proje Yarışması (2204) için Eskişehir Türk Telekom Mesleki ve Teknik Anadolu Lisesi Öğrencileri Enes Bostan, Defne Çal ve Irmak Derici tarafından hazırlanmıştır. Projede öneclikle derin öğrenme modellerinden EfficientNet B0-B7 arasındaki 8 model ile eğitim gerçekleştirilmiş ve başarım düzeyi en yüksek olan B7 modeli bir web uygulamasına entegre edilerek kullanılabilir ve yapay zeka uygulaması geliştirilmiştir. Proje Bursa bölgesinde Yazılım dalında bölge birinciliği kazanmış ve 5-9 Haziran 2023 tarihlerinde Ankara'da gerçekleştirilecek Türkiye finallerine katılmaya hak kazanmıştır. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Özet 
+Deri hastalıkları insanların dış görünüşleri ile yakından ilgili olduğundan psikolojik durumlarını ve sosyal ilişkilerini olumsuz etkileyebilmektedir. Deri hastalıklarının en tehlikelisi olarak görülen kötü huylu deri tümörleri ise kanser hastalıkları içinde en çok görülen kanser türlerinin başında gelmektedir. Medikal deri görüntülerinden deri hastalıklarının sınıflandırılarak bir ön teşhis gerçekleştirilmesi uzman hekimlerin iş yükünü azaltabilmekte, zamandan ve sağlık harcamalarından tasarruf sağlayabilmektedir. Ayrıca yapay zeka destekli bilgisayarla görü sistemleri ile deri kanserinin erken teşhisi açısından hastalar için uyarı mekanizması sağlanabilir. Bu çalışmada derin öğrenme algoritmalarından Evrişimli Sinir Ağları kullanılarak anormal lezyonlara sahip deri görüntülerinden hastalık teşhisi gerçekleştirebilen bir model geliştirilmesi ve web tabanlı bir uygulama ile entegre edilmesi amaçlanmıştır. Çalışmada açık kaynaklı yayınlanan DermNet, Dermatology Atlas ve Kaggle veri tabanlarında bulunan infeksiyöz deri hastalıkları, ekzama, akne, pigment hastalıkları, iyi ve kötü huylu tümör olmak üzere 6 farklı deri hastalığına ait 38.760 adet görsel kullanılmıştır. EfficientNet-B7 modeli ile transfer öğrenme metodolojisi kullanılarak geliştirilen derin öğrenme modelinin eğitim, test ve doğrulama aşamalarında kullanmak amacıyla veri seti 0.80:0.10:0.10 oranında bölünmüştür. Aşırı öğrenme probleminin önüne geçilmesi için veri artırma, erken durdurma ve öğrenme oranı azaltma teknikleri kullanılmıştır. Geliştirilen model 6 farklı deri hastalığı için %82 oranında doğru sınıflandırma yapmaktadır. Çalışmanın sonuçlarına göre pigmente bağlı deri hastalıkları için modele aktarılan veri miktarının yetersiz olmasından dolayı bu hastalığa ait tahmin başarımının diğerlerine göre düşük olduğu görülmüştür. Model, geliştirilen web tabanlı uygulama ile entegre edilerek hastalık teşhisi yapan somut bir ürün haline getirilmiştir.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Kullanılan Teknolojiler
+* Projenin model geliştirme aşaması Kaggle platformunda Tesla P100 grafik kartına sahip sunucularda TensorFlow ve Keras kütüphaneleri kullanılarak gerçekleştirilmiştir.
 
-## Learning Laravel
+* Geliştirilen model kaydedilerek dışarı aktarılmış ve sonrasında web uygulamasına entegrasyonu sağlanmıştır. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* Web uygulaması Laravel 8 Framework'ü kullanılarak geliştirilmiştir.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* Kullanıcıdan alınan jpg formatın resim dosyası sunucu üzerine kaydedilmekte ve Flask API'ına tahmin için HTTP isteğinde bulunulmaktadır. 
 
-## Laravel Sponsors
+* Flask ile geliştirilen tahmin API'ı yanıt olarak 6 hastalık için yüzdesel tahmin sonuçlarını döndürmektedir.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+* PHP dönen tahmin sonucunu önyüze aktarmaktadır.
 
-### Premium Partners
+* Önyüzde alınan tahmin sonuçları JavaScript ile büyükten küçüğe doğru sıralanarak kullanıcıya sonuç olarak gösterilmektedir.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+* Ayrıca uzman veri girişine imkan sağlanmaktadır, bu ekranda uzman hekimlerin teşhis koydukları görseller veri tabanına kaydedilmekte böylelikle veri setinin gelişimine katkı sağlanması amaçlanmaktadır.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Veri Seti
+Projede kullanılan veri setine buradan ulaşabilirsiniz: [Veri Seti](https://www.kaggle.com/datasets/ascanipek/skin-diseases)
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Uygulama
 
-## Security Vulnerabilities
+Projenin Web Uygulamasına buradan ulaşabilirsiniz: [Veri Seti](34.118.92.185)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
