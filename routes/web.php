@@ -31,7 +31,7 @@ Route::get('/docs', function () {
 
 Route::get('/abstract', function () {
     return view('abstract');
-});
+}); 
 
 Route::get('/seed-data', function () {
     return view('abstract');

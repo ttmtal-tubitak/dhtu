@@ -18,5 +18,5 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'home' => 'Home',
     'login' => 'Login',
-    'register' => 'Register!'
+    'register' => 'Register!' 
 ];
