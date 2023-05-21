@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
         <!-- Styles -->
         <style>
@@ -133,6 +134,13 @@
                     </div>
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                         DHTU v1.0 (PHP v{{ PHP_VERSION }} & PYTHON v3.9)
+                    </div>
+                </div>
+
+                <div class="row mt-3" style=" margin-top: 10px; text-align: center;">
+                    <div class="col-12" style="color: #FFF !important">
+                        <a href="https://github.com/ttmtal-tubitak/dhtu" target="_blank"><i class="bi bi-github" style="font-size: 33px; margin-right: 10px;"></i></a> 
+                        <a href="https://www.kaggle.com/datasets/ascanipek/skin-diseases" target="_blank"><i class="bi bi-database-fill" style="font-size: 33px"></i></a> 
                     </div>
                 </div>
            

@@ -133,8 +133,11 @@
 
                     </div>
                 </div>
+
             </div>
+            
         </div>
+
 </body>
 <style>
     .text-rainbow-animation {
