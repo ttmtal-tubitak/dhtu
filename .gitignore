@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/public/shell/*
+/public/flask/*
+/public/pyapi/*
 /storage/*.key
 /vendor
 .env
