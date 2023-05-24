@@ -31,7 +31,7 @@ Projede kullanılan veri setine buradan ulaşabilirsiniz: [Veri Seti](https://ww
 
 # Uygulama
 
-Projenin Web Uygulamasına buradan ulaşabilirsiniz: [Veri Seti](34.118.92.185)
+Projenin Web Uygulamasına buradan ulaşabilirsiniz: [Uygulamanın Yayında Olan Versiyonu](http://34.118.92.185)
 
 
 
