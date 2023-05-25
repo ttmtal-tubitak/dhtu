@@ -33,6 +33,48 @@ Projede kullanılan veri setine buradan ulaşabilirsiniz: [Veri Seti](https://ww
 
 Projenin Web Uygulamasına buradan ulaşabilirsiniz: [Uygulamanın Yayında Olan Versiyonu](http://34.118.92.185)
 
+# REST API
+
+3 . Parti Uygulamalarda kullanılmak üzere geliştirilen API'a ait HTTP istek türleri
+
+## API EndPoint Listesi
+
+### Resim Dosyası ile Tahmin (predictWithImage)
+
+`POST /api/predict-with-image/`
+
+    const data = new FormData();
+    data.append("image", "../IMG_4895_2.jpg");
+
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            console.log(this.responseText);
+        }
+    });
+
+    xhr.open("POST", "http://34.118.92.185/api/predict-with-image");
+    xhr.setRequestHeader("Authorization", "Bearer ...");
+
+    xhr.send(data);
+
+### Response
+
+    {
+        "image": "..\/img\/preds\/api_date_25-05-2023_21-17-01-559948419.jpg",
+        "predicts": {
+            "İnfeksiyöz Deri Hastalığı": 0.8316075801849365,
+            "Ekzama": 0.0025978132616728544,
+            "Akne": 0.0003459408471826464,
+            "Pigmente Bağlı Deri Hastalığı": 0.0003996501909568906,
+            "İyi Huylu Deri Tümörü": 0.16152003407478333,
+            "Kötü Huylu Deri Tümörü": 0.003528905799612403
+        }
+    }
+
+
 
 
 
