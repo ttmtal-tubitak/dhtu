@@ -40,6 +40,7 @@ Projenin Web Uygulamasına buradan ulaşabilirsiniz: [Uygulamanın Yayında Olan
 ## API EndPoint Listesi
 
 ### Resim Dosyası ile Tahmin (predictWithImage)
+#### Request (İstek)
 
 `POST /api/predict-with-image/`
 
@@ -60,7 +61,7 @@ Projenin Web Uygulamasına buradan ulaşabilirsiniz: [Uygulamanın Yayında Olan
 
     xhr.send(data);
 
-### Response
+#### Response (Yanıt)
 
     {
         "image": "..\/img\/preds\/api_date_25-05-2023_21-17-01-559948419.jpg",
@@ -74,7 +75,42 @@ Projenin Web Uygulamasına buradan ulaşabilirsiniz: [Uygulamanın Yayında Olan
         }
     }
 
+### Base64 Veri ile Tahmin (predictBase64)
+#### Request (İstek)
 
+`POST /api/predict-base64/`
+
+const data = new FormData();
+data.append("image", "data:image/jpeg;base64,...");
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "http://34.118.92.185/api/predict-base64");
+xhr.setRequestHeader("Accept", "application/json");
+xhr.setRequestHeader("Authorization", "Bearer ...");
+
+xhr.send(data);
+
+#### Response (Yanıt)
+
+    {
+        "image": "..\/img\/preds\/api_base64_date_25-05-2023_22-29-19-391309081.jpeg",
+        "predicts": {
+            "İnfeksiyöz Deri Hastalığı": 0.8316075801849365,
+            "Ekzama": 0.0025978132616728544,
+            "Akne": 0.0003459408471826464,
+            "Pigmente Bağlı Deri Hastalığı": 0.0003996501909568906,
+            "İyi Huylu Deri Tümörü": 0.16152003407478333,
+            "Kötü Huylu Deri Tümörü": 0.003528905799612403
+        }
+    }
 
 
 
