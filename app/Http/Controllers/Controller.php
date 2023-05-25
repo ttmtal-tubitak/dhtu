@@ -160,4 +160,43 @@ class Controller extends BaseController
             }
         }
     }
+
+
+
+    // API Methods
+
+    public function apiPredImage(Request $request){
+        if($request->hasFile('image') == 1){
+            $validation = Validator::make($request->all(), [
+                'image' => 'required|image|mimes:jpg,png,jpeg|max:7300' 
+            ]);
+            if($validation->passes()){
+                $file = $request->image;
+                $new_name = 'api_date_' . Carbon::now()->format('d-m-Y_H-i-s-') . rand() . '.' . $file->getClientOriginalExtension();
+                $fileStatus = $file->move(public_path('img/api/preds/'), $new_name);
+                $fileUrl = '../img/api/preds/'. $new_name;
+                $response = Http::asForm()->post('http://127.0.0.1:5000/predict-v2', [
+                    'input_data' => $fileUrl
+                ]);
+                $predres = [
+                    'İnfeksiyöz Deri Hastalığı' => $response[0][0],
+                    'Ekzama' => $response[0][1],
+                    'Akne' => $response[0][2],
+                    'Pigmente Bağlı Deri Hastalığı' => $response[0][3],
+                    'İyi Huylu Deri Tümörü' => $response[0][4],
+                    'Kötü Huylu Deri Tümörü' => $response[0][5],
+                ];
+                return response()->json(['image' => $fileUrl, 'predicts' => $predres], 200);
+                // return [$fileUrl, $response[0]];
+            }
+            else{
+                return response()->json(['message' => 'Dosya türü veya boyutu uygun değil!'], 301);
+            }
+        }
+        else{
+            return response()->json(['message' => 'İstekte resim dosyası yok!'], 302);
+        }  
+    }
+    
+
 }
