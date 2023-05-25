@@ -39,7 +39,7 @@ Projenin Web Uygulamasına buradan ulaşabilirsiniz: [Uygulamanın Yayında Olan
 
 ## API EndPoint Listesi
 
-### Resim Dosyası ile Tahmin (predictWithImage)
+### 1. Resim Dosyası ile Tahmin (predictWithImage)
 #### Request (İstek)
 
 `POST /api/predict-with-image/`
@@ -75,7 +75,7 @@ Projenin Web Uygulamasına buradan ulaşabilirsiniz: [Uygulamanın Yayında Olan
         }
     }
 
-### Base64 Veri ile Tahmin (predictBase64)
+### 2. Base64 Veri ile Tahmin (predictBase64)
 #### Request (İstek)
 
 `POST /api/predict-base64/`
