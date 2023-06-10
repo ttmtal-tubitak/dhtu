@@ -1,7 +1,7 @@
 
 # Prevelansı Yüksek Deri Hastalıklarının Derin Öğrenme ile Sınıflandırılması ve Web Uygulamsı
 
-Bu proje 2023 Tübitak Liselerarası Proje Yarışması (2204) için **Eskişehir Türk Telekom Mesleki ve Teknik Anadolu Lisesi** Öğrencileri ***Enes Bostan, Defne Çal ve Irmak Derici*** tarafından hazırlanmıştır. Projede öneclikle derin öğrenme modellerinden EfficientNet B0-B7 arasındaki 8 model ile eğitim gerçekleştirilmiş ve başarım düzeyi en yüksek olan B7 modeli bir web uygulamasına entegre edilerek kullanılabilir bir yapay zeka uygulaması geliştirilmiştir. Proje Bursa bölgesinde Yazılım dalında bölge birinciliği kazanmış ve 5-9 Haziran 2023 tarihlerinde Ankara'da gerçekleştirilecek Türkiye finallerine katılmaya hak kazanmıştır. 
+Bu proje 2023 Tübitak 2204-A Liselerarası Proje Yarışmasında Türkiye 2.liği ödülünü almıştır. Proje **Eskişehir Türk Telekom Mesleki ve Teknik Anadolu Lisesi** Öğrencileri ***Enes Bostan, Defne Çal ve Irmak Derici*** tarafından hazırlanmıştır. Projede öneclikle derin öğrenme modellerinden EfficientNet B0-B7 arasındaki 8 model ile eğitim gerçekleştirilmiş ve başarım düzeyi en yüksek olan B7 modeli bir web uygulamasına entegre edilerek kullanılabilir bir yapay zeka uygulaması geliştirilmiştir. Proje Bursa bölgesinde Yazılım dalında bölge birinciliği kazanmış ve 5-9 Haziran 2023 tarihlerinde Ankara'da gerçekleştirilen Türkiye finallerinde 2. lik ödülünü almaya hak kazanmıştır. 
 
 
 ## Özet 
